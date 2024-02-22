@@ -10,6 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Timeless Warfare"
+config/name="TimelessWarfare"
+run/main_scene="res://Levels/mainLevel.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
