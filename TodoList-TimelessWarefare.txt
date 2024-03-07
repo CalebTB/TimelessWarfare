@@ -1,0 +1,29 @@
+Timeless Warfare Checklist
+
+*** = do it if we have time, if not just keep base level for time being
+(what camera angle do we want? Top Down? Slight Angle?) 
+    [I think Top Down would be best bet for us]
+
+Things to do in Order:
+    (1.) get_Grid_Working
+    (2.) get_Towers_Implemented (work with placement)
+        In Addition to Towers:
+            (2.1) Health
+            (2.2) Damage
+            (2.3) Sell/Buy/Upgrade***
+            (2.4) Moveable after Placement
+            (2.5) Area of Attack
+    (2.B) get_Walls_Implemented
+
+
+Things I think that can be done outside of Order:
+    (1.) AI Tracking Towards Target 
+        (1.1) Spawn Points
+        (1.2) Health
+        (1.3) Damage
+        (1.4) Round Based Spawns
+        (1.5) Figure Out how to do the round based to where it can increment easily without hard coding everything
+    (2.) Assets for Towers
+    (3.) Assets for Enemies 
+    (4.) GUI
+        (4.1) Indicators for health???
