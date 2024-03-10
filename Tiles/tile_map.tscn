@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b8aweyiw52gw1"]
 
-[ext_resource type="Texture2D" uid="uid://bl88ftfq38s8m" path="res://kenney_tower-defense-top-down/Tilesheet/towerDefense_tilesheet.png" id="1_yxbq1"]
+[ext_resource type="Texture2D" uid="uid://bl88ftfq38s8m" path="res://Unused Assets/kenney_tower-defense-top-down/Tilesheet/towerDefense_tilesheet.png" id="1_yxbq1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_glouw"]
 texture = ExtResource("1_yxbq1")
