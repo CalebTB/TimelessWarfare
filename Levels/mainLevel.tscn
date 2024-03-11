@@ -1,33 +1,98 @@
-[gd_scene load_steps=2 format=3 uid="uid://btj4edce4k15f"]
+[gd_scene load_steps=6 format=3 uid="uid://btj4edce4k15f"]
 
+[ext_resource type="Theme" uid="uid://gp4g7f8hpbin" path="res://menu_theme.tres" id="1_k62aw"]
 [ext_resource type="Script" path="res://Levels/MainMenu.gd" id="1_xb4r4"]
+[ext_resource type="Texture2D" uid="uid://c0uwauk2quy32" path="res://Immortal Kingdom Wallpaper(edited).jpg" id="3_35ijq"]
+[ext_resource type="FontFile" uid="uid://mnbo1swe0bgc" path="res://ElixiR.ttf" id="4_mkhde"]
 
-[node name="Menu" type="Control"]
+[sub_resource type="LabelSettings" id="LabelSettings_5t7gm"]
+line_spacing = 5.0
+font_size = 32
+
+[node name="MainMenu" type="Control"]
+texture_filter = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_k62aw")
 script = ExtResource("1_xb4r4")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_left = 292.0
-offset_top = 144.0
-offset_right = 425.0
-offset_bottom = 627.0
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_35ijq")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
+[node name="Team" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -128.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "CID Team:
+Caleb Byers - Khoa Nguyen - Samual Parker - Brennan Sheckart - Jaxon Talbert"
+label_settings = SubResource("LabelSettings_5t7gm")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -545.0
+offset_top = -360.0
+offset_right = 545.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_constants/separation = 16
+
+[node name="GameName" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_mkhde")
+theme_override_font_sizes/font_size = 80
+text = "Timeless Warefare:
+Immortal Kingdom"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_mkhde")
+theme_override_font_sizes/font_size = 60
 text = "Play"
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_mkhde")
+theme_override_font_sizes/font_size = 60
 text = "Quit"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
