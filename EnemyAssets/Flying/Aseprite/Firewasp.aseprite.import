@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dvu07l6228w3v"
+path="res://.godot/imported/Firewasp.aseprite-224a0a765e721c89536b6df70a454686.res"
+
+[deps]
+
+source_file="res://EnemyAssets/Flying/Aseprite/Firewasp.aseprite"
+dest_files=["res://.godot/imported/Firewasp.aseprite-224a0a765e721c89536b6df70a454686.res"]
+
+[params]
+

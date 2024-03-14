@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://0g1wcp0oy17s"
+path="res://.godot/imported/Voidbutterfly.aseprite-db462d35c2770a2b1c9215d46567f3e0.res"
+
+[deps]
+
+source_file="res://EnemyAssets/Flying/Aseprite/Voidbutterfly.aseprite"
+dest_files=["res://.godot/imported/Voidbutterfly.aseprite-db462d35c2770a2b1c9215d46567f3e0.res"]
+
+[params]
+

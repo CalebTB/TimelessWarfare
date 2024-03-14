@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=3 uid="uid://cthdg7pc1olar"]
+
+[ext_resource type="PackedScene" uid="uid://dwb8pgeo2e35" path="res://TowerInstantiates/Panel Images/tower1Panel.tscn" id="1_t6ikl"]
+[ext_resource type="Script" path="res://TowerInstantiates/Panel Images/Health.gd" id="2_bfouy"]
+[ext_resource type="Script" path="res://TowerInstantiates/Panel Images/Gold.gd" id="3_rm0c5"]
+
+[node name="Tower UI" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 1650.0
+offset_top = 100.0
+offset_right = 1859.0
+offset_bottom = 612.0
+
+[node name="FlowContainer" type="FlowContainer" parent="Panel"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = 19.0
+offset_top = 16.0
+offset_right = 189.0
+offset_bottom = 496.0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="towerOnePanel" parent="Panel/FlowContainer" instance=ExtResource("1_t6ikl")]
+layout_mode = 2
+
+[node name="towerOnePanel2" parent="Panel/FlowContainer" instance=ExtResource("1_t6ikl")]
+layout_mode = 2
+
+[node name="towerOnePanel3" parent="Panel/FlowContainer" instance=ExtResource("1_t6ikl")]
+layout_mode = 2
+
+[node name="towerOnePanel4" parent="Panel/FlowContainer" instance=ExtResource("1_t6ikl")]
+layout_mode = 2
+
+[node name="towerOnePanel5" parent="Panel/FlowContainer" instance=ExtResource("1_t6ikl")]
+layout_mode = 2
+
+[node name="towerOnePanel6" parent="Panel/FlowContainer" instance=ExtResource("1_t6ikl")]
+layout_mode = 2
+
+[node name="towerOnePanel7" parent="Panel/FlowContainer" instance=ExtResource("1_t6ikl")]
+layout_mode = 2
+
+[node name="towerOnePanel8" parent="Panel/FlowContainer" instance=ExtResource("1_t6ikl")]
+layout_mode = 2
+
+[node name="towerOnePanel9" parent="Panel/FlowContainer" instance=ExtResource("1_t6ikl")]
+layout_mode = 2
+
+[node name="towerOnePanel10" parent="Panel/FlowContainer" instance=ExtResource("1_t6ikl")]
+layout_mode = 2
+
+[node name="Health" type="Label" parent="."]
+offset_left = 1650.0
+offset_top = 67.0
+offset_right = 1706.0
+offset_bottom = 90.0
+text = "Health:"
+script = ExtResource("2_bfouy")
+
+[node name="Gold" type="Label" parent="."]
+offset_left = 1759.0
+offset_top = 67.0
+offset_right = 1815.0
+offset_bottom = 90.0
+text = "Gold:"
+script = ExtResource("3_rm0c5")

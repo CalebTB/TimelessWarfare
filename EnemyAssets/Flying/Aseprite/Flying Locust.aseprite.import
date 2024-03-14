@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dojb0g2hmhepk"
+path="res://.godot/imported/Flying Locust.aseprite-8db66ea0c4bb93597c38c0a0cff44ec6.res"
+
+[deps]
+
+source_file="res://EnemyAssets/Flying/Aseprite/Flying Locust.aseprite"
+dest_files=["res://.godot/imported/Flying Locust.aseprite-8db66ea0c4bb93597c38c0a0cff44ec6.res"]
+
+[params]
+
