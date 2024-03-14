@@ -1,18 +1,14 @@
 Timeless Warfare Checklist
 
-*** = do it if we have time, if not just keep base level for time being
-(what camera angle do we want? Top Down? Slight Angle?) 
-	[I think Top Down would be best bet for us]
-
 Things to do in Order:
 	(1.) get_Grid_Working
-	(2.) get_Towers_Implemented (work with placement)
+	(X) get_Towers_Implemented (work with placement)
 		In Addition to Towers:
-			(2.1) Health
-			(2.2) Damage
+			(X) Health
+			(X) Damage
 			(2.3) Sell/Buy/Upgrade***
 			(2.4) Moveable after Placement
-			(2.5) Area of Attack
+			(X) Area of Attack
 	(2.B) get_Walls_Implemented
 
 
@@ -27,3 +23,27 @@ Things I think that can be done outside of Order:
 	(3.) Assets for Enemies 
 	(4.) GUI
 		(4.1) Indicators for health???
+
+What I added:
+	(1) Tower Placement
+	(2) Gold and Health and ability to buy towers
+	(3) Spawn Point to test killing enemies
+	(4) Ability to Shoot
+	(5) Some other core mechanics to get the ball rolling
+
+What still needs to improved:
+	(1.) If you can get grid placement working go for it if not make it to where towers cant be placed on top of each other
+		(1.1) Fix the visual that should show where the tower is being placed right now you have to guess where it going to placed.
+		(1.2) I think the camera has somwthing to do with the placement of towers being far right of where your mouse is but I dont know
+	(2.) Round based enemies
+	(3.) Fixed the bug where the tower rotates and make it to where only the arrow is rotating.
+	(4.) Add upgradables if you want but make it less of a priority
+	(5.) Add walls if you want but I doubt we will get that going
+	(6.) If you want to fix the Ai, do it. But right now i just have it following a path then killing itself once it hits the Queen. If you keep the same Ai then add more spawn points from the other three sides.
+	(7.) Make towers sellable if you want, may be more of a pain than you think, maybe not. The videos help alot tho with these things
+	(8.) Add more towers too. 
+	(9.) Add more enemies too. Both things are pretty straight forward, but they may require separate scripts for each new tower and enemy with a few things changed to make them different.
+-----------------------------------------------------------------------------------------------------------------------
+I think that is it for things that need to be done but I could be wrong, if you come up with anything else
+add it in. 
+-----------------------------------------------------------------------------------------------------------------------
