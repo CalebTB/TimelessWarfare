@@ -30,7 +30,7 @@ func _on_gui_input(event):
 				var path = get_tree().get_root().get_node("mainGame/Towers")
 				
 				# Manually adjust for the offset when setting the tower's position
-				var adjusted_position = get_global_mouse_position() - Vector2(450, 0)  # Adjusting 450px to the left
+				var adjusted_position = get_global_mouse_position() - Vector2(0, 0)
 				var local_position = path.to_local(adjusted_position)
 				
 				tempTower.get_parent().remove_child(tempTower)
