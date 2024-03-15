@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0ha2gbod5dr6"]
+
+[ext_resource type="Script" path="res://GameUI.gd" id="1_vrrit"]
+[ext_resource type="Texture2D" uid="uid://mv7junu5d7g2" path="res://Pixel UI pack 1.png" id="2_f4c7h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykb8m"]
+atlas = ExtResource("2_f4c7h")
+region = Rect2(385, 353, 62, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_magib"]
+atlas = ExtResource("2_f4c7h")
+region = Rect2(385, 449, 62, 30)
+
+[node name="GUI" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vrrit")
+
+[node name="Left GUI" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 40.0
+offset_right = 240.0
+offset_bottom = 216.0
+
+[node name="Menu" type="PanelContainer" parent="Left GUI"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Menu Button" type="Button" parent="Left GUI/Menu"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Left GUI/Menu/Menu Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_ykb8m")
+
+[node name="Quit" type="PanelContainer" parent="Left GUI"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Quit Button" type="Button" parent="Left GUI/Quit"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Left GUI/Quit/Quit Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_magib")
+
+[connection signal="pressed" from="Left GUI/Menu/Menu Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Left GUI/Quit/Quit Button" to="." method="_on_button_2_pressed"]

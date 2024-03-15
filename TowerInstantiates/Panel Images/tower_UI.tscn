@@ -11,6 +11,7 @@ offset_left = 1650.0
 offset_top = 100.0
 offset_right = 1859.0
 offset_bottom = 612.0
+size_flags_horizontal = 0
 
 [node name="FlowContainer" type="FlowContainer" parent="Panel"]
 custom_minimum_size = Vector2(80, 80)
