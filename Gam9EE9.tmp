@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://fpu14mn7nxdf"]
+[gd_scene load_steps=7 format=3 uid="uid://fpu14mn7nxdf"]
 
 [ext_resource type="FontFile" uid="uid://mnbo1swe0bgc" path="res://ElixiR.ttf" id="1_qio3v"]
 [ext_resource type="Script" path="res://GameOver.gd" id="1_vnx2g"]
@@ -7,47 +7,13 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q2ea4"]
 bg_color = Color(0.0444921, 0.156758, 0.0705779, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_exf4n"]
-atlas = ExtResource("2_kwlbn")
-region = Rect2(705, 33, 78, 30)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vmxeq"]
-texture = SubResource("AtlasTexture_exf4n")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bfa8f"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_svymf"]
 atlas = ExtResource("2_kwlbn")
 region = Rect2(577, 33, 78, 30)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5h3x2"]
-texture = SubResource("AtlasTexture_bfa8f")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yvxob"]
-atlas = ExtResource("2_kwlbn")
-region = Rect2(833, 33, 78, 30)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s72oe"]
-texture = SubResource("AtlasTexture_yvxob")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nlan4"]
-atlas = ExtResource("2_kwlbn")
-region = Rect2(449, 449, 62, 30)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a265a"]
-texture = SubResource("AtlasTexture_nlan4")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8ua4g"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtspq"]
 atlas = ExtResource("2_kwlbn")
 region = Rect2(385, 449, 62, 30)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rvjr1"]
-texture = SubResource("AtlasTexture_8ua4g")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c34di"]
-atlas = ExtResource("2_kwlbn")
-region = Rect2(513, 449, 62, 30)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m76hf"]
-texture = SubResource("AtlasTexture_c34di")
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_vnx2g")
@@ -61,7 +27,8 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_q2ea4")
 metadata/_edit_use_anchors_ = true
 
-[node name="Stage" type="Label" parent="Panel"]
+[node name="Lose" type="Label" parent="Panel"]
+visible = false
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
@@ -79,7 +46,29 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("1_qio3v")
 theme_override_font_sizes/font_size = 128
-text = "Game Stage"
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="Win" type="Label" parent="Panel"]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -280.0
+offset_right = 340.0
+offset_bottom = -168.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_qio3v")
+theme_override_font_sizes/font_size = 128
+text = "YOU WIN"
 horizontal_alignment = 1
 
 [node name="Restart" type="Button" parent="Panel"]
@@ -96,9 +85,15 @@ offset_right = 155.0
 offset_bottom = -430.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/normal = SubResource("StyleBoxTexture_vmxeq")
-theme_override_styles/hover = SubResource("StyleBoxTexture_5h3x2")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_s72oe")
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/Restart"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_svymf")
 
 [node name="Quit" type="Button" parent="Panel"]
 texture_filter = 1
@@ -114,9 +109,15 @@ offset_right = 155.0
 offset_bottom = 310.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxTexture_a265a")
-theme_override_styles/hover = SubResource("StyleBoxTexture_rvjr1")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_m76hf")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Quit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_gtspq")
 
 [connection signal="pressed" from="Panel/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Panel/Quit" to="." method="_on_quit_pressed"]

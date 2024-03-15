@@ -1,15 +1,49 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0ha2gbod5dr6"]
+[gd_scene load_steps=15 format=3 uid="uid://b0ha2gbod5dr6"]
 
 [ext_resource type="Script" path="res://GameUI.gd" id="1_vrrit"]
 [ext_resource type="Texture2D" uid="uid://mv7junu5d7g2" path="res://Pixel UI pack 1.png" id="2_f4c7h"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ykb8m"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bxc8"]
+atlas = ExtResource("2_f4c7h")
+region = Rect2(449, 353, 62, 30)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wblm5"]
+texture = SubResource("AtlasTexture_4bxc8")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffmll"]
 atlas = ExtResource("2_f4c7h")
 region = Rect2(385, 353, 62, 30)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_magib"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2qxub"]
+texture = SubResource("AtlasTexture_ffmll")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tv3sj"]
+atlas = ExtResource("2_f4c7h")
+region = Rect2(513, 353, 62, 30)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v6buh"]
+texture = SubResource("AtlasTexture_tv3sj")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nv06"]
+atlas = ExtResource("2_f4c7h")
+region = Rect2(449, 449, 62, 30)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_emcu8"]
+texture = SubResource("AtlasTexture_4nv06")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0wn7"]
 atlas = ExtResource("2_f4c7h")
 region = Rect2(385, 449, 62, 30)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rjde3"]
+texture = SubResource("AtlasTexture_f0wn7")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2s7a"]
+atlas = ExtResource("2_f4c7h")
+region = Rect2(513, 449, 62, 30)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ioqvh"]
+texture = SubResource("AtlasTexture_g2s7a")
 
 [node name="GUI" type="Control"]
 texture_filter = 1
@@ -34,15 +68,9 @@ size_flags_vertical = 3
 
 [node name="Menu Button" type="Button" parent="Left GUI/Menu"]
 layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="Left GUI/Menu/Menu Button"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_ykb8m")
+theme_override_styles/normal = SubResource("StyleBoxTexture_wblm5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2qxub")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_v6buh")
 
 [node name="Quit" type="PanelContainer" parent="Left GUI"]
 layout_mode = 2
@@ -50,15 +78,9 @@ size_flags_vertical = 3
 
 [node name="Quit Button" type="Button" parent="Left GUI/Quit"]
 layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="Left GUI/Quit/Quit Button"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_magib")
+theme_override_styles/normal = SubResource("StyleBoxTexture_emcu8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rjde3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ioqvh")
 
 [connection signal="pressed" from="Left GUI/Menu/Menu Button" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="Left GUI/Menu/Menu Button" to="." method="_on_button_pressed"]

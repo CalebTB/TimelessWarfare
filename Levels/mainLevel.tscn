@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://btj4edce4k15f"]
+[gd_scene load_steps=21 format=3 uid="uid://btj4edce4k15f"]
 
 [ext_resource type="Theme" uid="uid://gp4g7f8hpbin" path="res://menu_theme.tres" id="1_k62aw"]
 [ext_resource type="Script" path="res://Levels/MainMenu.gd" id="1_xb4r4"]
@@ -17,15 +17,49 @@ corner_radius_top_right = 64
 corner_radius_bottom_right = 64
 corner_radius_bottom_left = 64
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xulr8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbds2"]
+atlas = ExtResource("5_13u1f")
+region = Rect2(449, 385, 62, 30)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nx4q7"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mkwdi"]
+texture = SubResource("AtlasTexture_mbds2")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wftr"]
 atlas = ExtResource("5_13u1f")
 region = Rect2(385, 385, 62, 30)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y0i0v"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_058c3"]
+texture = SubResource("AtlasTexture_2wftr")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2mcn"]
+atlas = ExtResource("5_13u1f")
+region = Rect2(513, 385, 62, 30)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f1s8s"]
+texture = SubResource("AtlasTexture_v2mcn")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xulr8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afk5a"]
+atlas = ExtResource("5_13u1f")
+region = Rect2(449, 449, 62, 30)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7qyyc"]
+texture = SubResource("AtlasTexture_afk5a")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77m8v"]
 atlas = ExtResource("5_13u1f")
 region = Rect2(385, 449, 62, 30)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ohu0"]
+texture = SubResource("AtlasTexture_77m8v")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hiqcf"]
+atlas = ExtResource("5_13u1f")
+region = Rect2(513, 449, 62, 30)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e56q7"]
+texture = SubResource("AtlasTexture_hiqcf")
 
 [node name="MainMenu" type="Control"]
 texture_filter = 2
@@ -115,21 +149,11 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.0
-theme_override_fonts/font = ExtResource("4_mkhde")
-theme_override_font_sizes/font_size = 60
-text = "Play"
+theme_override_styles/normal = SubResource("StyleBoxTexture_mkwdi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_058c3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_f1s8s")
 icon = SubResource("AtlasTexture_xulr8")
 metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="Panel/Play"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_nx4q7")
 
 [node name="Quit" type="Button" parent="Panel"]
 layout_mode = 1
@@ -145,18 +169,10 @@ size_flags_vertical = 0
 size_flags_stretch_ratio = 0.0
 theme_override_fonts/font = ExtResource("4_mkhde")
 theme_override_font_sizes/font_size = 60
-text = "Quit"
+theme_override_styles/normal = SubResource("StyleBoxTexture_7qyyc")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2ohu0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e56q7")
 metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="Panel/Quit"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_y0i0v")
 
 [connection signal="pressed" from="Panel/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Panel/Quit" to="." method="_on_quit_pressed"]

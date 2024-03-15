@@ -599,7 +599,7 @@ script = ExtResource("5_lcos2")
 autostart = true
 
 [node name="Tower1" parent="." instance=ExtResource("6_glcjg")]
-position = Vector2(124, 167)
+position = Vector2(707, 556)
 
 [node name="GUI" parent="." instance=ExtResource("7_r5bu8")]
 
