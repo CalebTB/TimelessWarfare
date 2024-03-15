@@ -82,7 +82,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_emcu8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_rjde3")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ioqvh")
 
-[connection signal="pressed" from="Left GUI/Menu/Menu Button" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="Left GUI/Menu/Menu Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Left GUI/Quit/Quit Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Left GUI/Menu/Menu Button" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="Left GUI/Quit/Quit Button" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Left GUI/Quit/Quit Button" to="." method="_on_quit_button_pressed"]
