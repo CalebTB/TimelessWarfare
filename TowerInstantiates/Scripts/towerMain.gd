@@ -6,6 +6,7 @@ var pathName
 var currTargets = []
 var curr
 
+
 #Replace Soldier with actual names of Soldiers
 #Soldier A is the name of the example video posted in Chat so whatever Node name we give our enemies then replace it with that
 
@@ -18,7 +19,7 @@ func _process(delta):
 			get_node("BulletContainer").get_child(i).queue_free()
 
 #Checks when the enemy is inside the Attack radius and shoots, so adjust that for the radius
-func _on_tower_body_entered(body):
+func _on_tower_body_entered(body):	
 	if "Bug1" in body.name:
 		var tempArray = []
 		currTargets = get_node("Tower").get_overlapping_bodies()
@@ -44,6 +45,10 @@ func _on_tower_body_entered(body):
 		tempBullet.bulletDmg = bulletDmg
 		get_node("BulletContainer").add_child(tempBullet)
 		tempBullet.global_position = $Aim.global_position
+		
+		##increase difficulty - space out arrows
+		await get_tree().create_timer(0.4).timeout
+		
 	
 
 func _on_tower_body_exited(body):
