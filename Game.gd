@@ -5,4 +5,5 @@ extends Node2D
 func _process(delta):
 	if GameCore.Health <= 0:
 		get_tree().change_scene_to_file("res://GameOver.tscn")
-
+	elif GameCore.WinState >= 1:
+		get_tree().change_scene_to_file("res://GameOver.tscn")
