@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://b0ha2gbod5dr6"]
+[gd_scene load_steps=15 format=3 uid="uid://b0ha2gbod5dr6"]
 
 [ext_resource type="Script" path="res://GameUI.gd" id="1_vrrit"]
 [ext_resource type="Texture2D" uid="uid://mv7junu5d7g2" path="res://Pixel UI pack 1.png" id="2_f4c7h"]
-[ext_resource type="FontFile" uid="uid://mnbo1swe0bgc" path="res://ElixiR.ttf" id="3_t6kau"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4bxc8"]
 atlas = ExtResource("2_f4c7h")
@@ -46,13 +45,6 @@ region = Rect2(513, 449, 62, 30)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ioqvh"]
 texture = SubResource("AtlasTexture_g2s7a")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_57sv3"]
-atlas = ExtResource("2_f4c7h")
-region = Rect2(177, 129, 62, 30)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4n4ql"]
-texture = SubResource("AtlasTexture_57sv3")
-
 [node name="GUI" type="Control"]
 texture_filter = 1
 layout_mode = 3
@@ -90,34 +82,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_emcu8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_rjde3")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ioqvh")
 
-[node name="Timer" type="Timer" parent="."]
-autostart = true
-
-[node name="TimerLabel" type="Label" parent="Timer"]
-texture_filter = 1
-anchors_preset = -1
-anchor_left = 0.442
-anchor_top = 0.022
-anchor_right = 0.558333
-anchor_bottom = 0.0665926
-offset_left = -0.640076
-offset_top = -23.76
-offset_bottom = 0.0800018
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_t6kau")
-theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = SubResource("StyleBoxTexture_4n4ql")
-text = "05:00"
-horizontal_alignment = 1
-justification_flags = 131
-metadata/_edit_use_anchors_ = true
-
-[connection signal="pressed" from="Left GUI/Menu/Menu Button" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="Left GUI/Menu/Menu Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Left GUI/Quit/Quit Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Left GUI/Menu/Menu Button" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="Left GUI/Quit/Quit Button" to="." method="_on_button_2_pressed"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Left GUI/Quit/Quit Button" to="." method="_on_quit_button_pressed"]
