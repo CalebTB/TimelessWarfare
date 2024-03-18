@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://01e74g4uanvp"]
+
+[ext_resource type="Script" path="res://TowerInstantiates/Scripts/towerMain3.gd" id="1_778le"]
+[ext_resource type="Texture2D" uid="uid://irsf03b3ynov" path="res://Unused Assets/Towers/Towers bases/PNGs/Tower 02-2.png" id="2_yekfc"]
+[ext_resource type="Texture2D" uid="uid://dv67ewrht6jye" path="res://Unused Assets/Towers/Towers Weapons/Tower 02/Spritesheets/Tower 02 - Level 02 - Weapon.png" id="3_6dgqt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygrsa"]
+size = Vector2(38, 27)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ma10"]
+radius = 146.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_epeef"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 150
+corner_radius_top_right = 150
+corner_radius_bottom_right = 150
+corner_radius_bottom_left = 150
+
+[node name="Tower1" type="StaticBody2D"]
+script = ExtResource("1_778le")
+
+[node name="TowerModel" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(1, 0.989691)
+texture = ExtResource("2_yekfc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -23.5)
+shape = SubResource("RectangleShape2D_ygrsa")
+
+[node name="Aim" type="Marker2D" parent="."]
+position = Vector2(21, -23)
+
+[node name="Weapon-1" type="Sprite2D" parent="."]
+position = Vector2(-5.96046e-08, -24)
+rotation = 1.5708
+scale = Vector2(0.74508, 0.838845)
+texture = ExtResource("3_6dgqt")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(373, 60, 87, 60)
+
+[node name="Tower" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower"]
+shape = SubResource("CircleShape2D_3ma10")
+one_way_collision_margin = 0.0
+debug_color = Color(0, 1, 1, 0.235294)
+
+[node name="BulletContainer" type="Node" parent="."]
+
+[node name="Area" type="Panel" parent="."]
+modulate = Color(0.321569, 0.321569, 0.321569, 0.313726)
+offset_left = -144.0
+offset_top = -144.0
+offset_right = 144.0
+offset_bottom = 144.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_epeef")
+
+[connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
+[connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]
