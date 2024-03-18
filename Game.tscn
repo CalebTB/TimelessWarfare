@@ -600,4 +600,3 @@ autostart = true
 [node name="GUI" parent="." instance=ExtResource("7_r5bu8")]
 
 [connection signal="timeout" from="SpawnerPoint/Timer" to="SpawnerPoint" method="_on_timer_timeout"]
-
