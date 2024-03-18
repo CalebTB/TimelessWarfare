@@ -11,7 +11,7 @@ func _process(delta):
 		
 	if Health <= 0:
 		death()
-		GameCore.Gold += 20
+
 
 func death():
 	get_parent().get_parent().queue_free()

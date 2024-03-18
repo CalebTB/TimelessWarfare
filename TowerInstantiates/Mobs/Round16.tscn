@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://wf70wvjn0fpx"]
+
+[ext_resource type="PackedScene" uid="uid://be1pgd7luv7rr" path="res://TowerInstantiates/Mobs/Bug1.tscn" id="1_xsns2"]
+[ext_resource type="PackedScene" uid="uid://cilevl2gn5wd2" path="res://Game.tscn" id="2_cw5tj"]
+
+[sub_resource type="Curve2D" id="Curve2D_6545g"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1439, 1084, 0, 0, 0, 0, 1334, 951, 0, 0, 0, 0, 1157, 898, 0, 0, 0, 0, 1072, 840, 0, 0, 0, 0, 1006, 785, 0, 0, 0, 0, 915, 683, 0, 0, 0, 0, 837, 648, 0, 0, 0, 0, 689, 632)
+}
+point_count = 8
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_6545g")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(1439, 1084)
+rotation = -2.23909
+loop = false
+
+[node name="Bug1" parent="PathFollow2D" instance=ExtResource("1_xsns2")]
+
+[node name="mainGame" parent="." instance=ExtResource("2_cw5tj")]
+visible = false
