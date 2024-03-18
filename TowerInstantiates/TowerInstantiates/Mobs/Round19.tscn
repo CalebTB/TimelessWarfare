@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b813xgorc6hjp"]
+
+[ext_resource type="PackedScene" uid="uid://be1pgd7luv7rr" path="res://TowerInstantiates/Mobs/Bug1.tscn" id="1_4rmpj"]
+[ext_resource type="PackedScene" uid="uid://cilevl2gn5wd2" path="res://Game.tscn" id="2_0v8jk"]
+
+[sub_resource type="Curve2D" id="Curve2D_6545g"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1780, 701.846, 0, 0, 0, 0, 1491, 588.496, 0, 0, 0, 0, 1261, 571.739, 0, 0, 0, 0, 1163, 558.926, 0, 0, 0, 0, 1038, 526.399, 0, 0, 0, 0, 935, 517.528, 0, 0, 0, 0, 867, 504.715, 0, 0, 0, 0, 838, 496.829, 0, 0, 0, 0, 808, 478.102, 0, 0, 0, 0, 735, 443.604, 0, 0, 0, 0, 645, 538, 0, 0, 0, 0, 645, 554)
+}
+point_count = 12
+
+[node name="Path2D" type="Path2D"]
+position = Vector2(0, -8.05818)
+scale = Vector2(1, 1.01455)
+curve = SubResource("Curve2D_6545g")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(1780, 701.846)
+rotation = -2.76781
+loop = false
+
+[node name="Bug1" parent="PathFollow2D" instance=ExtResource("1_4rmpj")]
+
+[node name="mainGame" parent="." instance=ExtResource("2_0v8jk")]
+visible = false
