@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cthdg7pc1olar"]
+[gd_scene load_steps=8 format=3 uid="uid://cthdg7pc1olar"]
 
 [ext_resource type="PackedScene" uid="uid://dwb8pgeo2e35" path="res://TowerInstantiates/Panel Images/tower1Panel.tscn" id="1_t6ikl"]
+[ext_resource type="PackedScene" uid="uid://be1bcrt5n8k3g" path="res://TowerInstantiates/Panel Images/tower2Panel.tscn" id="2_1tn1e"]
 [ext_resource type="Script" path="res://TowerInstantiates/Panel Images/Health.gd" id="2_bfouy"]
 [ext_resource type="Script" path="res://TowerInstantiates/Panel Images/Gold.gd" id="3_rm0c5"]
+[ext_resource type="Script" path="res://TowerInstantiates/Panel Images/GUITowerClickPanel2.gd" id="3_xbaat"]
+[ext_resource type="PackedScene" uid="uid://bs2ampqc2jsnx" path="res://TowerInstantiates/Panel Images/tower3Panel.tscn" id="4_d18t5"]
+[ext_resource type="Script" path="res://TowerInstantiates/Panel Images/GUITowerClickPanel3.gd" id="5_fqf2i"]
 
 [node name="Tower UI" type="CanvasLayer"]
 
@@ -26,32 +30,16 @@ theme_override_constants/v_separation = 10
 [node name="towerOnePanel" parent="Panel/FlowContainer" instance=ExtResource("1_t6ikl")]
 layout_mode = 2
 
-[node name="towerOnePanel2" parent="Panel/FlowContainer" instance=ExtResource("1_t6ikl")]
-layout_mode = 2
-
-[node name="towerOnePanel3" parent="Panel/FlowContainer" instance=ExtResource("1_t6ikl")]
-layout_mode = 2
-
-[node name="towerOnePanel4" parent="Panel/FlowContainer" instance=ExtResource("1_t6ikl")]
-layout_mode = 2
-
-[node name="towerOnePanel5" parent="Panel/FlowContainer" instance=ExtResource("1_t6ikl")]
-layout_mode = 2
-
-[node name="towerOnePanel6" parent="Panel/FlowContainer" instance=ExtResource("1_t6ikl")]
-layout_mode = 2
-
 [node name="towerOnePanel7" parent="Panel/FlowContainer" instance=ExtResource("1_t6ikl")]
 layout_mode = 2
 
-[node name="towerOnePanel8" parent="Panel/FlowContainer" instance=ExtResource("1_t6ikl")]
+[node name="towerTwoPanel" parent="Panel/FlowContainer" instance=ExtResource("2_1tn1e")]
 layout_mode = 2
+script = ExtResource("3_xbaat")
 
-[node name="towerOnePanel9" parent="Panel/FlowContainer" instance=ExtResource("1_t6ikl")]
+[node name="towerThreePanel" parent="Panel/FlowContainer" instance=ExtResource("4_d18t5")]
 layout_mode = 2
-
-[node name="towerOnePanel10" parent="Panel/FlowContainer" instance=ExtResource("1_t6ikl")]
-layout_mode = 2
+script = ExtResource("5_fqf2i")
 
 [node name="Health" type="Label" parent="."]
 offset_left = 1650.0

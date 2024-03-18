@@ -1,14 +1,14 @@
 extends Panel
 
 
-@onready var tower = preload("res://TowerInstantiates/TowerModel.tscn")
+@onready var tower = preload("res://TowerInstantiates/TowerModel3.tscn")
 var currTile
 var tempTower = null
 var dragging = false
 
 func _on_gui_input(event):
-	#If gold is above 100 then you can drag and drop towers
-	if GameCore.Gold >= 100:
+	#If gold is above 350 then you can drag and drop towers
+	if GameCore.Gold >= 350:
 	#------------------------------------------------------
 		var tempTower = tower.instantiate()
 		#Left Click Down
@@ -30,4 +30,4 @@ func _on_gui_input(event):
 			path.add_child(tempTower)
 			tempTower.global_position = event.global_position
 			tempTower.get_node("Area").hide()
-			GameCore.Gold -= 100
+			GameCore.Gold -= 350

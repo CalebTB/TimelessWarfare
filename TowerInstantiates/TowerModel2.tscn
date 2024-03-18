@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://b33c3hy6y6n3x"]
+
+[ext_resource type="Script" path="res://TowerInstantiates/Scripts/towerMain2.gd" id="1_exv6o"]
+[ext_resource type="Texture2D" uid="uid://cmilxgqdb725a" path="res://Unused Assets/Towers/Towers bases/PNGs/Tower 02-1.png" id="2_1k6br"]
+[ext_resource type="Texture2D" uid="uid://c6lt8bh167l3a" path="res://Unused Assets/Towers/Towers bases/PNGs/Weapon-2.png" id="3_blswt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygrsa"]
+size = Vector2(38, 27)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ma10"]
+radius = 146.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_epeef"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 150
+corner_radius_top_right = 150
+corner_radius_bottom_right = 150
+corner_radius_bottom_left = 150
+
+[node name="Tower1" type="StaticBody2D"]
+script = ExtResource("1_exv6o")
+
+[node name="TowerModel" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(1, 0.989691)
+texture = ExtResource("2_1k6br")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -23.5)
+shape = SubResource("RectangleShape2D_ygrsa")
+
+[node name="Aim" type="Marker2D" parent="."]
+position = Vector2(21, -23)
+
+[node name="Weapon-1" type="Sprite2D" parent="."]
+position = Vector2(-5.96046e-08, -24)
+rotation = 1.5708
+scale = Vector2(0.74508, 0.838845)
+texture = ExtResource("3_blswt")
+
+[node name="Tower" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower"]
+shape = SubResource("CircleShape2D_3ma10")
+one_way_collision_margin = 0.0
+debug_color = Color(0, 1, 1, 0.235294)
+
+[node name="BulletContainer" type="Node" parent="."]
+
+[node name="Area" type="Panel" parent="."]
+modulate = Color(0.321569, 0.321569, 0.321569, 0.313726)
+offset_left = -144.0
+offset_top = -144.0
+offset_right = 144.0
+offset_bottom = 144.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_epeef")
+
+[connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
+[connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]
