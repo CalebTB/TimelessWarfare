@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cilevl2gn5wd2"]
+[gd_scene load_steps=10 format=3 uid="uid://cilevl2gn5wd2"]
 
 [ext_resource type="Texture2D" uid="uid://cguoo3eby6yjk" path="res://TileSheet-Main/RPG Nature Tileset.png" id="1_63ex2"]
 [ext_resource type="Script" path="res://Game.gd" id="1_bvth6"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://d3032ex0pcilj" path="res://Unused Assets/Towers/Towers bases/PNGs/Queen.png" id="3_a647t"]
 [ext_resource type="PackedScene" uid="uid://cthdg7pc1olar" path="res://TowerInstantiates/Panel Images/tower_UI.tscn" id="4_w1bsm"]
 [ext_resource type="Script" path="res://TowerInstantiates/Scripts/RoundSpawner.gd" id="5_lcos2"]
-[ext_resource type="PackedScene" uid="uid://blwbh4x0qfs1s" path="res://TowerInstantiates/TowerModel.tscn" id="6_glcjg"]
 [ext_resource type="PackedScene" uid="uid://b0ha2gbod5dr6" path="res://GameUI.tscn" id="7_r5bu8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qkre4"]
@@ -564,7 +563,7 @@ anchor_mode = 0
 
 [node name="queenMain" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(960, 540)
+position = Vector2(710, 558)
 scale = Vector2(1.39063, 1.04545)
 texture = ExtResource("2_3rc2a")
 metadata/_aseprite_wizard_config_ = {
@@ -598,9 +597,7 @@ script = ExtResource("5_lcos2")
 [node name="Timer" type="Timer" parent="SpawnerPoint"]
 autostart = true
 
-[node name="Tower1" parent="." instance=ExtResource("6_glcjg")]
-position = Vector2(707, 556)
-
 [node name="GUI" parent="." instance=ExtResource("7_r5bu8")]
 
 [connection signal="timeout" from="SpawnerPoint/Timer" to="SpawnerPoint" method="_on_timer_timeout"]
+
