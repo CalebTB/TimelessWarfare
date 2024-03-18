@@ -10,14 +10,16 @@ var bulletDmg
 
 func _physics_process(delta):
 	var pathSpawnerNode = get_tree().get_root().get_node("mainGame/SpawnerPoint")
-		
 	for i in pathSpawnerNode.get_child_count():
 		if pathSpawnerNode.get_child(i).name == pathName:
-			target = pathSpawnerNode.get_child(i).get_child(0).get_child(0).global_position
-	
-	velocity = global_position.direction_to(target) *speed
-	look_at(target)
-	move_and_slide()
+			var potentialTarget = pathSpawnerNode.get_child(i).get_child(0).get_child(0)
+			if potentialTarget != null:  # Check if the target node is not null
+				target = potentialTarget.global_position
+				break  # Exit the loop once the target is found
+	if target != null:  # Ensure target is not null before proceeding
+		velocity = global_position.direction_to(target) * speed
+		look_at(target)
+		move_and_slide()
 	
 
 #whenever it hits the enemy then its loses health.
