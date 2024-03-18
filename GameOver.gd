@@ -9,7 +9,9 @@ func _on_quit_pressed():
 	get_tree().quit()
 
 func _ready():
+	#check if health has reached 0
 	if GameCore.Health <= 0:
 		$Panel/Stage.text = "You Lose"
-	else:
+	#check if winstate is 1
+	elif GameCore.WinState >= 1:
 		$Panel/Stage.text = "You Win"
