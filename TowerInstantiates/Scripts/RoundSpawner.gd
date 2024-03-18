@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var path = preload("res://TowerInstantiates/Mobs/Round 1.tscn")
+@onready var path = preload("res://TowerInstantiates/Mobs/Round1.tscn")
 
 
 
