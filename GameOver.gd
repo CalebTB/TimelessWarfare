@@ -1,8 +1,8 @@
 extends CanvasLayer
 
 func _on_restart_pressed():
-	GameCore.Health = 100
-	GameCore.Gold = 500
+	GameCore.Health = GameCore.default_health
+	GameCore.Gold = GameCore.default_gold
 	get_tree().change_scene_to_file("res://Game.tscn")
 
 func _on_quit_pressed():
