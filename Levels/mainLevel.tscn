@@ -1,10 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://btj4edce4k15f"]
+[gd_scene load_steps=22 format=3 uid="uid://btj4edce4k15f"]
 
-[ext_resource type="Theme" uid="uid://gp4g7f8hpbin" path="res://menu_theme.tres" id="1_k62aw"]
+[ext_resource type="Theme" uid="uid://sgtcgmam5els" path="res://menu_theme.tres" id="1_k62aw"]
 [ext_resource type="Script" path="res://Levels/MainMenu.gd" id="1_xb4r4"]
-[ext_resource type="Texture2D" uid="uid://c0uwauk2quy32" path="res://Immortal Kingdom Wallpaper(edited).jpg" id="3_35ijq"]
+[ext_resource type="Texture2D" uid="uid://c0uwauk2quy32" path="res://UI assets/Immortal Kingdom Wallpaper(edited).jpg" id="3_35ijq"]
+[ext_resource type="AudioStream" uid="uid://m7o0c33yws4b" path="res://sounds/field_theme_1.wav" id="4_2ilig"]
 [ext_resource type="FontFile" uid="uid://mnbo1swe0bgc" path="res://ElixiR.ttf" id="4_mkhde"]
-[ext_resource type="Texture2D" uid="uid://mv7junu5d7g2" path="res://Pixel UI pack 1.png" id="5_13u1f"]
+[ext_resource type="Texture2D" uid="uid://mv7junu5d7g2" path="res://UI assets/Pixel UI pack 1.png" id="5_13u1f"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5t7gm"]
 line_spacing = 5.0
@@ -95,6 +96,10 @@ Caleb Byers - Khoa Nguyen - Samual Parker - Brennan Sheckart - Jaxon Talbert"
 label_settings = SubResource("LabelSettings_5t7gm")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Background"]
+stream = ExtResource("4_2ilig")
+autoplay = true
 
 [node name="Panel" type="Panel" parent="."]
 texture_filter = 1

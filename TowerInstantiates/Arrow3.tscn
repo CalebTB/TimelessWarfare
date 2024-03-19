@@ -5,7 +5,6 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f6q75"]
 radius = 13.0
-height = 30.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_higft"]
 radius = 14.0
