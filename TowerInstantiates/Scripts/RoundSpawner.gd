@@ -83,6 +83,6 @@ func _on_timer_timeout():
 	var tempPath19 = path19.instantiate()
 	add_child(tempPath19)
 	
-	#genrate win after surviving 60 seconds of double time
-	await get_tree().create_timer(15).timeout
+	#genrate win after surviving 30 seconds of double time
+	await get_tree().create_timer(30).timeout
 	GameCore.WinState += 1
