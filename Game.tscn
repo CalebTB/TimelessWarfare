@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cilevl2gn5wd2"]
+[gd_scene load_steps=12 format=3 uid="uid://deog6vlhyaatg"]
 
 [ext_resource type="Texture2D" uid="uid://cguoo3eby6yjk" path="res://TileSheet-Main/RPG Nature Tileset.png" id="1_63ex2"]
 [ext_resource type="Script" path="res://Game.gd" id="1_bvth6"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://d3032ex0pcilj" path="res://Unused Assets/Towers/Towers bases/PNGs/Queen.png" id="3_a647t"]
 [ext_resource type="PackedScene" uid="uid://cthdg7pc1olar" path="res://TowerInstantiates/Panel Images/tower_UI.tscn" id="4_w1bsm"]
 [ext_resource type="Script" path="res://TowerInstantiates/Scripts/RoundSpawner.gd" id="5_lcos2"]
-[ext_resource type="PackedScene" uid="uid://b0ha2gbod5dr6" path="res://GameUI.tscn" id="7_r5bu8"]
+[ext_resource type="PackedScene" uid="uid://gnvng3dd6at2" path="res://GameUI.tscn" id="7_r5bu8"]
+[ext_resource type="AudioStream" uid="uid://ptycwsumf78s" path="res://sounds/dungeon_theme_2.wav" id="8_kfb5y"]
+[ext_resource type="AudioStream" uid="uid://ct8ld0oqym2a4" path="res://sounds/Bow Attack 2.wav" id="9_xjbom"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qkre4"]
 texture = ExtResource("1_63ex2")
@@ -598,5 +600,13 @@ script = ExtResource("5_lcos2")
 autostart = true
 
 [node name="GUI" parent="." instance=ExtResource("7_r5bu8")]
+
+[node name="bg_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_kfb5y")
+volume_db = -11.161
+autoplay = true
+
+[node name="shooting_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_xjbom")
 
 [connection signal="timeout" from="SpawnerPoint/Timer" to="SpawnerPoint" method="_on_timer_timeout"]

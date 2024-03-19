@@ -1,49 +1,56 @@
-[gd_scene load_steps=15 format=3 uid="uid://b0ha2gbod5dr6"]
+[gd_scene load_steps=17 format=3 uid="uid://gnvng3dd6at2"]
 
 [ext_resource type="Script" path="res://GameUI.gd" id="1_vrrit"]
-[ext_resource type="Texture2D" uid="uid://mv7junu5d7g2" path="res://Pixel UI pack 1.png" id="2_f4c7h"]
+[ext_resource type="Texture2D" uid="uid://mv7junu5d7g2" path="res://UI assets/Pixel UI pack 1.png" id="2_icv5l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4bxc8"]
-atlas = ExtResource("2_f4c7h")
+atlas = ExtResource("2_icv5l")
 region = Rect2(449, 353, 62, 30)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wblm5"]
 texture = SubResource("AtlasTexture_4bxc8")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ffmll"]
-atlas = ExtResource("2_f4c7h")
+atlas = ExtResource("2_icv5l")
 region = Rect2(385, 353, 62, 30)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2qxub"]
 texture = SubResource("AtlasTexture_ffmll")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tv3sj"]
-atlas = ExtResource("2_f4c7h")
+atlas = ExtResource("2_icv5l")
 region = Rect2(513, 353, 62, 30)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v6buh"]
 texture = SubResource("AtlasTexture_tv3sj")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4nv06"]
-atlas = ExtResource("2_f4c7h")
+atlas = ExtResource("2_icv5l")
 region = Rect2(449, 449, 62, 30)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_emcu8"]
 texture = SubResource("AtlasTexture_4nv06")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f0wn7"]
-atlas = ExtResource("2_f4c7h")
+atlas = ExtResource("2_icv5l")
 region = Rect2(385, 449, 62, 30)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rjde3"]
 texture = SubResource("AtlasTexture_f0wn7")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2s7a"]
-atlas = ExtResource("2_f4c7h")
+atlas = ExtResource("2_icv5l")
 region = Rect2(513, 449, 62, 30)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ioqvh"]
 texture = SubResource("AtlasTexture_g2s7a")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1mma"]
+atlas = ExtResource("2_icv5l")
+region = Rect2(177, 129, 62, 30)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uojkr"]
+texture = SubResource("AtlasTexture_i1mma")
 
 [node name="GUI" type="Control"]
 texture_filter = 1
@@ -82,7 +89,26 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_emcu8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_rjde3")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ioqvh")
 
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="TimerLabel" type="Label" parent="Timer"]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_right = 80.0
+offset_bottom = 64.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxTexture_uojkr")
+text = "03:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="Left GUI/Menu/Menu Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Left GUI/Menu/Menu Button" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="Left GUI/Quit/Quit Button" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Left GUI/Quit/Quit Button" to="." method="_on_quit_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
